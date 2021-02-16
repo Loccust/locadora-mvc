@@ -1,1 +1,1 @@
-# locadora-mvc
+# VideoStore-mvc

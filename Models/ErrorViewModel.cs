@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace locadora.Models
+namespace VideoStore.Model
 {
     public class ErrorViewModel
     {

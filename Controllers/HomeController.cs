@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using locadora.Models;
+using VideoStore.Model;
 
-namespace locadora.Controllers
+namespace VideoStore.Controllers
 {
     public class HomeController : Controller
     {
