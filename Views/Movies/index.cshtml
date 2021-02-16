@@ -1,0 +1,14 @@
+@using VideoStore.Model;
+@using VideoStore.Data;
+@model IEnumerable<VideoStore.Model.Movie>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li> @Html.DisplayFor(modelItem => item.Title)</li>
+    }
+</ul>

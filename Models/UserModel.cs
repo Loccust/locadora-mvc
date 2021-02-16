@@ -11,7 +11,6 @@ namespace VideoStore.Model
         [Required(ErrorMessage = "O nome do usuário é obrigatório", AllowEmptyStrings = false)]
         public string Name { get; set; }
         public System.DateTime CreationDate { get; set; }
-
         [Required(ErrorMessage = "O Documento é obrigatório", AllowEmptyStrings = false)]
         public string Document { get; set; }
         [Required(ErrorMessage = "O telefone de contato é obrigatório", AllowEmptyStrings = false)]
