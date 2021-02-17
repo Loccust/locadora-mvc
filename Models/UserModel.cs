@@ -21,7 +21,7 @@ namespace VideoStore.Model
         public string CEP { get; set; }
         [Required(ErrorMessage = "O logradouro do endereço é obrigatório", AllowEmptyStrings = false)]
         public string Street { get; set; }
-        [Required(ErrorMessage = "O número do endereço é obrigatório", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "O número do endereço é obrigatório")]
         public int Number { get; set; }
         public string Complement { get; set; }
    }

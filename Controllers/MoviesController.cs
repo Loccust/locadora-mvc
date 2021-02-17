@@ -11,20 +11,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace VideoStore.Controllers
 {
-    public class MoviesController : Controller
+  public class MoviesController : Controller
+  {
+    private readonly ILogger<MoviesController> _logger;
+    private readonly VideoStoreDbContext _context;
+
+    public MoviesController(VideoStoreDbContext context, ILogger<MoviesController> logger)
     {
-        private readonly ILogger<MoviesController> _logger;
-        private readonly VideoStoreDbContext _context;
-
-        public MoviesController(VideoStoreDbContext context, ILogger<MoviesController> logger){
-            _context = context;
-            _logger = logger;
-        }
-
-        //GET: Movies
-        public async Task<IActionResult> Index(int? categoryId)
-        {
-            return View(await _context.Movies.ToListAsync());
-        }
+      _context = context;
+      _logger = logger;
     }
+
+    [HttpGet]
+    public async Task<IActionResult> ListMovies(int page)
+    {
+      var movies = await _context.Movies.OrderBy(movie => movie.Title).Skip(page-1).Take(8).ToListAsync();
+      return View(movies);
+    }
+    public async Task<IActionResult> MovieDetails(int id)
+    {
+      var movie = await _context.Movies.Where(movie => movie.MovieId == id).FirstOrDefaultAsync();
+      return View(movie);
+    }
+  }
 }

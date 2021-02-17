@@ -1,0 +1,25 @@
+@using VideoStore.Model;
+@using VideoStore.Data;
+@model IEnumerable<VideoStore.Model.Movie>
+@{
+  ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+      <div class="card col-6">
+        <img src='Model.Image' class="card-img-top">
+      </div>
+      <div class="card col-6">
+        <h5 class="card-text"><b>R$ @Html.Display("Price").ToString().Replace('.', ',')</b></h5>
+        <a class="btn btn-primary">
+          Alugar
+        </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card col-12">
+      <h2> @Html.Display("Title")</h2>
+    </div>
+  </div>
+</div>

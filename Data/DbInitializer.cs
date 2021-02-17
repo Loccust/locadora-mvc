@@ -89,15 +89,27 @@ namespace VideoStore.Data
             {
                 new Movie{
                     Title="Fast and Furious",
-                    Image="",
+                    Sinopse=@"Após os acontecimentos em Londres, Dom, Brian,
+                    Letty e o resto da equipe têm a chance de voltar para os Estados Unidos
+                     e recomeçar suas vidas. Mas a tranquilidade do grupo é destruída quando
+                     Deckard Shaw, um assassino profissional, quer vingança pelo acidente que 
+                     deixou seu irmão em coma. Agora, a equipe tem de unir forças para deter 
+                     um vilão novo e ainda mais perigoso. Dessa vez, não se trata apenas de 
+                     uma questão de velocidade: a corrida é pela sobrevivência.",
+                    Image="https://images-na.ssl-images-amazon.com/images/I/910VekmDZ5L._AC_SY741_.jpg",
                     CategoryId=1,
-                    RegisteredDate=DateTime.Now,
+                    Duration="2h 02min"
                 },
                 new Movie{
-                    Title="Fast and Furious",
-                    Image="",
-                    CategoryId=1,
-                    RegisteredDate=DateTime.Now,
+                    Title="Percy Jackson e o ladrão de raios",
+                    Image="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbuNSWg8q9dnyCXFgu9zWETElvyGVGpbSvLkZAXeNJ9veGBffx",
+                    Sinopse=@"A vida do adolescente Percy Jackson, que está sempre pronto 
+                    para entrar em uma confusão, torna-se bem mais complicada quando ele 
+                    descobre que é filho do deus grego Poseidon. Em um campo de treinamento 
+                    para filhos das divindades, Percy aprende a tirar proveito de seus poderes 
+                    divinos e se preparea para a maior aventura de sua vida.",
+                    CategoryId=2,
+                    Duration="1h 49min"
                 },
             };
 

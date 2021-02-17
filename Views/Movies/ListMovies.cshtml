@@ -1,0 +1,26 @@
+@using VideoStore.Model;
+@model IEnumerable<VideoStore.Model.Movie>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row movie-container">
+        @foreach (var Movie in Model)
+        {
+            <div class="card col-3" style="width: 18rem;">
+                <img src=@Movie.Image class="card-img-top">
+                <div class="card-body">
+                    <div class="card-title">
+                        <span>@Movie.Title</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-text"><b>R$ @Movie.Price.ToString().Replace('.', ',')</b></h5>
+                        <a class="btn btn-primary" asp-controller="Movies" asp-action="MovieDetails" asp-route-id=@Movie.MovieId>
+                            Alugar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
