@@ -71,26 +71,82 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-.movie-container .card {
+.listmovie-container .card {
   margin: 10px;
 }
 
-.movie-container .card {
+.listmovie-container .card {
   border: 0 none;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.075);
 }
 
-.movie-container .card,
-.movie-container .card img,
-.movie-container .card .card-body button {
-  border-radius: 10px;
+.listmovie-container .card:hover {
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.movie-container .card img {
-  height: 300px;
-  margin-top: 15px;
+.listmovie-container .card,
+.listmovie-container .card img,
+.listmovie-container .card .card-body button {
+  border-radius: 15px;
+}
+
+.container img {
   object-fit: cover;
 }
-.movie-container .card .card-title {
+
+.listmovie-container .card a img {
+  height: 300px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.listmovie-container .card .card-title {
   height: 40px;
+}
+
+.listmovie-container .card {
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.detailmovie-container img {
+  height: 360px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.detailmovie-container a.btn#alugar {
+  width: 130px;
+  padding: 7px 10px;
+}
+
+a.btn-primary,
+a.btn-primary:hover {
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.feather {
+  width: 18px;
+  height: 18px;
+  margin-top: -5px;
+  margin-right: 5px;
+}
+
+.media-img {
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+  .media-img {
+    justify-content: center;
+  }
+
+  .detailmovie-container img {
+    height: 325px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

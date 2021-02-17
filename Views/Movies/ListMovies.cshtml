@@ -1,26 +1,59 @@
 @using VideoStore.Model;
-@model IEnumerable<VideoStore.Model.Movie>
+@model ICollection<VideoStore.Model.Movie>;
+@{
+    int pages = 1;
+    if (Model.Count > 8)
+        pages = Model.Count / 8;
+}
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<div class="container">
-    <div class="row movie-container">
-        @foreach (var Movie in Model)
-        {
-            <div class="card col-3" style="width: 18rem;">
+
+<div class="row listmovie-container">
+    @foreach (var Movie in Model)
+    {
+        <div class="card col-6 col-md-3" style="width: 18rem;">
+            <a asp-controller="Movies" asp-action="MovieDetails" asp-route-id=@Movie.MovieId>
                 <img src=@Movie.Image class="card-img-top">
-                <div class="card-body">
-                    <div class="card-title">
-                        <span>@Movie.Title</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-text"><b>R$ @Movie.Price.ToString().Replace('.', ',')</b></h5>
-                        <a class="btn btn-primary" asp-controller="Movies" asp-action="MovieDetails" asp-route-id=@Movie.MovieId>
-                            Alugar
-                        </a>
-                    </div>
+            </a>
+            <div class="card-body">
+                <div class="card-title">
+                    <span>@Movie.Title</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h5 class="card-text"><b>R$ @Movie.Price.ToString().Replace('.', ',')</b></h5>
+                    <a class="btn btn-primary">
+                        <i data-feather="shopping-bag" id="alugar"></i>Alugar
+                    </a>
                 </div>
             </div>
+        </div>
+    }
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @* <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">
+                    &laquo;
+                </span>
+            </a>
+        </li> *@
+        @for (var i = 1; i <= pages; i++)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-controller="Movies" asp-action="ListMovies" asp-route-page="@i">
+                    @i
+                </a>
+            </li>
         }
-    </div>
+        @* <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li> *@
+    </ul>
+</nav>
